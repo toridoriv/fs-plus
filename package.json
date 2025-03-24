@@ -1,0 +1,45 @@
+{
+  "name": "@toridoriv/fs-plus",
+  "version": "0.1.0",
+  "description": "Additional utility functions for dealing with the filesystem in Node.js.",
+  "license": "GPLv3",
+  "type": "module",
+  "author": {
+    "name": "Victoria Rodriguez",
+    "email": "vrodriguezfe@icloud.com",
+    "url": "https://github.com/toridoriv"
+  },
+  "homepage": "https://github.com/toridoriv/fs-plus",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/toridoriv/fs-plus.git"
+  },
+  "bugs": {
+    "url": "https://github.com/toridoriv/fs-plus/issues",
+    "email": "vrodriguezfe@icloud.com"
+  },
+  "scripts": {},
+  "devDependencies": {
+    "@toridoriv/eslint-config": "github:toridoriv/eslint-config",
+    "@types/node": "^22.13.11",
+    "@typescript-eslint/eslint-plugin": "^8.27.0",
+    "eslint": "^9.23.0",
+    "jest": "^29.7.0",
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.2"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "**/test/**",
+      "**/dist/**",
+      "**/tmp/**"
+    ],
+    "exec": "npm run build",
+    "env": {
+      "NODE_ENV": "development"
+    }
+  },
+  "dependencies": {
+    "ansi-colors": "^4.1.3"
+  }
+}
