@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import np from "node:path";
-import c from "ansi-colors";
+import util from "node:util";
 
 const customInspectSymbol = Symbol.for("nodejs.util.inspect.custom");
 
@@ -207,7 +207,9 @@ export class TextFile {
    */
   getContentPreview() {
     const newLineSymbol = "↩︎";
-    const preview = this.content.substring(0, 80).replaceAll("\n", c.dim(newLineSymbol));
+    const preview = this.content
+      .substring(0, 80)
+      .replaceAll("\n", util.styleText(["dim"], newLineSymbol));
     const rest = this.content.substring(80);
     const additional = rest.length > 0 ? `...${rest.length} more characters` : "";
 
@@ -226,7 +228,10 @@ export class TextFile {
       const name = _ as keyof FileProperties<string>;
       const value = name === "content" ? this.getContentPreview() : properties[name];
       const padding = " ".repeat(longest - name.length);
-      const section = c.bold(name[0].toUpperCase() + name.substring(1) + padding + ":");
+      const section = util.styleText(
+        ["bold"],
+        name[0].toUpperCase() + name.substring(1) + padding + ":",
+      );
 
       lines.push(`${section} ${value}`);
     }

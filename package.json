@@ -38,8 +38,5 @@
     "env": {
       "NODE_ENV": "development"
     }
-  },
-  "dependencies": {
-    "ansi-colors": "^4.1.3"
   }
 }
