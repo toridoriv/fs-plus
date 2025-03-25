@@ -26,6 +26,7 @@ export default [
       "*.tmp",
       "tmp.*",
       "var/tmp",
+      "dist",
     ],
   },
   ...eslintConfig.javascript.node,
