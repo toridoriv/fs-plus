@@ -1,6 +1,9 @@
 import { TextFile } from "./file.ts";
 import * as utils from "./utils.ts";
 
+/**
+ * Options for the `readdir` function.
+ */
 export type ReaddirOptions = {
   /**
    * The maximum depth of the directory tree to read. If `0`, only the files in the
@@ -32,7 +35,7 @@ const defaultOpts: ReaddirOptions = { depth: 0, filter: utils.includePath, skip:
  *
  * @param path    - The path to the directory to read.
  * @param options - The options to use. @see {@linkcode  ReaddirOptions}
- * @returns An array of files (@see {@linkcode TextFile})
+ * @returns An array of files. @see {@linkcode TextFile}
  */
 export function readdir(path: string, options: Partial<ReaddirOptions> = {}): TextFile[] {
   const opts = { ...defaultOpts, ...options };
