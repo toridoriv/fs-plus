@@ -1,11 +1,5 @@
 import { prettierConfig } from "@toridoriv/eslint-config";
 
-prettierConfig.objectWrap = "collapse";
+const { printWidth, endOfLine, useTabs, ...config } = prettierConfig;
 
-prettierConfig.jsdocIgnoreNewLineDescriptionsForConsistentColumns = true;
-prettierConfig.jsdocAllowDescriptionOnNewLinesForTags = ["module"];
-prettierConfig.jsdocLinesBetweenExampleTagAndCode = 0;
-prettierConfig.jsdocFormatExamples = true;
-prettierConfig.jsdocIndentUnformattedExamples = true;
-
-export default prettierConfig;
+export default config;

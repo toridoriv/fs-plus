@@ -6,8 +6,7 @@ import * as utils from "./utils.ts";
  */
 export type ReaddirOptions = {
   /**
-   * The maximum depth of the directory tree to read. If `0`, only the files in the
-   * current directory will be returned.
+   * The maximum depth of the directory tree to read. If `0`, only the files in the current directory will be returned.
    *
    * @default 0
    */
@@ -47,11 +46,7 @@ export function readdir(path: string, options: Partial<ReaddirOptions> = {}): Te
   return readDirContent(path, opts, 0);
 }
 
-function readDirContent(
-  path: string,
-  { depth, filter, skip }: ReaddirOptions,
-  index: number,
-): TextFile[] {
+function readDirContent(path: string, { depth, filter, skip }: ReaddirOptions, index: number): TextFile[] {
   const files: TextFile[] = [];
 
   /**

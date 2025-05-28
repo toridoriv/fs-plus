@@ -8,7 +8,7 @@
     "exactOptionalPropertyTypes": true,
     "isolatedModules": true,
     "keyofStringsOnly": false,
-    "maxNodeModuleJsDepth": 4,
+    "maxNodeModuleJsDepth": 5,
     "module": "nodenext",
     "moduleResolution": "nodenext",
     "noEmit": true,
@@ -31,5 +31,8 @@
     "useUnknownInCatchVariables": true
   },
   "exclude": [".tmp", "*.log", "coverage", "dist", "logs", "node_modules", "tmp"],
-  "typeAcquisition": { "enable": false }
+  "include": ["tsup.config.ts", "prettier.config.js", "eslint.config.js", "source"],
+  "typeAcquisition": {
+    "enable": false
+  }
 }

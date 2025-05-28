@@ -14,19 +14,40 @@
     "type": "git",
     "url": "git+https://github.com/toridoriv/fs-plus.git"
   },
+  "files": [
+    "lib",
+    "README.md",
+    "LICENSE"
+  ],
   "bugs": {
     "url": "https://github.com/toridoriv/fs-plus/issues",
     "email": "vrodriguezfe@icloud.com"
   },
-  "scripts": {},
+  "scripts": {
+    "chmod": "find sbin -type f -not -name '*utils*' -not -name '*helpers*' -exec chmod +x {} \\;",
+    "prebuild": "rm -rf lib",
+    "build": "tsup",
+    "postbuild": "npm run fix:build",
+    "fix:build": "scripty"
+  },
   "devDependencies": {
     "@toridoriv/eslint-config": "github:toridoriv/eslint-config",
-    "@types/node": "^22.13.11",
-    "@typescript-eslint/eslint-plugin": "^8.27.0",
-    "eslint": "^9.23.0",
+    "@types/node": "^22.15.23",
+    "@typescript-eslint/eslint-plugin": "^8.33.0",
+    "eslint": "^9.27.0",
     "jest": "^29.7.0",
     "prettier": "^3.5.3",
-    "typescript": "^5.8.2"
+    "scripty": "github:toridoriv/scripty",
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.0-dev.20250528"
+  },
+  "overrides": {
+    "typescript": "$typescript"
+  },
+   "config": {
+    "scripty": {
+      "path": "sbin"
+    }
   },
   "nodemonConfig": {
     "ignore": [
