@@ -2,8 +2,23 @@
   "name": "@toridoriv/fs-plus",
   "version": "0.1.0",
   "description": "Additional utility functions for dealing with the filesystem in Node.js.",
-  "license": "GPLv3",
   "type": "module",
+  "license": "GPL-3.0-only",
+  "main": "./lib/main.cjs",
+  "module": "./lib/main.js",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./lib/main.d.ts",
+        "default": "./lib/main.js"
+      },
+      "require": {
+        "types": "./lib/main.d.cts",
+        "default": "./lib/main.cjs"
+      }
+    }
+  },
+  "types": "./lib/main.d.ts",
   "author": {
     "name": "Victoria Rodriguez",
     "email": "vrodriguezfe@icloud.com",
