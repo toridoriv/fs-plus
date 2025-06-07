@@ -1,3 +1,4 @@
+export { TextFile } from "./file.ts";
 import { TextFile } from "./file.ts";
 import * as utils from "./utils.ts";
 

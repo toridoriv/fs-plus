@@ -161,4 +161,4 @@ type ReaddirOptions = {
  */
 declare function readdir(path: string, options?: Partial<ReaddirOptions>): TextFile[];
 
-export { type ReaddirOptions, readdir };
+export { type ReaddirOptions, TextFile, readdir };
